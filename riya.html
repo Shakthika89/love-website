@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For My Love 💖</title>
+
+<style>
+
+/* 🌸 Body */
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff3e8;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* 💖 Container with red double curve border */
+.container {
+    position: relative;
+    width: 90%;
+    height: 92vh;
+    margin: 20px auto;
+    background: #fff3e8;
+    border: 10px solid red;
+    border-radius: 70px 25px 70px 25px / 25px 70px 25px 70px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 🎀 Ribbon */
+.ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+}
+
+/* 🌹 Bouquet */
+.bouquet {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    mix-blend-mode:multiply;
+}
+
+/* 💕 Falling hearts */
+@keyframes fall {
+    0% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(800px); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    color: pink;
+    font-size: 20px;
+    animation: fall 6s linear infinite;
+}
+
+/* 🌸 Sections */
+.section {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.section.active {
+    display: block;
+}
+
+/* 💌 Message */
+.message {
+    font-size: 22px;
+    color: darkred;
+    margin: 20px;
+}
+
+/* 💖 Buttons */
+button {
+    padding: 10px 25px;
+    font-size: 18px;
+    margin: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+/* 🐱 Images */
+.center-img {
+    width: 150px;
+    margin-top: 70px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+
+/* 📸 Gallery */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.gallery img {
+    width: 220px;
+    height:280px;
+    object-fit:cover;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.4);
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- 💕 Falling Hearts -->
+<div class="heart" style="left:10%;">💗</div>
+<div class="heart" style="left:30%; animation-delay:1s;">💗</div>
+<div class="heart" style="left:50%; animation-delay:2s;">💗</div>
+<div class="heart" style="left:70%; animation-delay:3s;">💗</div>
+<div class="heart" style="left:90%; animation-delay:4s;">💗</div>
+
+<!-- 🎀 Ribbon and 🌹 Bouquet -->
+<img src="ribbon.png" class="ribbon">
+<img src="floe.png" class="bouquet">
+
+<!-- 🌸 PAGE 1 -->
+<div id="page1" class="section active">
+    <img src="kitten.png" class="center-img">
+    <p class="message">
+        I made something for you ❤️<br>
+        Do you want to see?
+    </p>
+    <button onclick="nextPage('yes')">Yes</button>
+    <button onclick="nextPage('no')">No</button>
+</div>
+
+<!-- 💌 PAGE 2 -->
+<div id="page2" class="section">
+    <img src="mine.jpg" class="center-img">
+    <p class="message">Will you be my Valentine? 💖</p>
+    <button onclick="nextPage('ofcourse')">Of Course 💕</button>
+    <button onclick="nextPage('nope')">Nope 😢</button>
+</div>
+
+<!-- 💖 PAGE 3 LOVE LETTER -->
+<div id="page3" class="section">
+    <p class="message" style="margin-top:100px;">
+       <b> My Love ❤️,</b><br><br>
+       
+From the day you came into my life, everything feels brighter and more meaningful. You are not just my boyfriend, you are my best friend, my safe place, and my biggest happiness.
+When I feel weak, you give me strength.
+When I feel sad, you make me smile without even trying.
+Your voice calms my heart, and your love gives me peace.
+I don’t know what the future holds, but I know one thing for sure — I want you beside me in every chapter of my life. Through every laugh, every tear, every dream, and every challenge, I want us to face it together.
+You make ordinary moments feel magical. Even a simple conversation with you becomes the best part of my day. I am so grateful for your patience, your care, your understanding, and the way you love me so purely.
+If I could choose again, I would still choose you — again and again — without hesitation.
+Thank you for being you.
+Thank you for loving me the way you do.
+And thank you for making my world so beautiful.
+I love you more than words can ever explain ❤️
+Forever yours 💍✨        I love you more than words can say 💕
+    </p>
+    <button onclick="nextPage('memories')" class="memory-btn">Memories 📸</button>
+</div>
+
+<!-- 📸 PAGE 4 MEMORIES -->
+<div id="page4" class="section">
+    <h2 style="margin-top:80px; color:darkred;">
+        Our Beautiful Memories 💖
+    </h2>
+
+    <div class="gallery">
+        <img src="photo2.jpg.jpeg" alt="Memory 1">
+        <img src="p1.jpeg" alt="Memory 2">
+        <img src="photo3.jpg.jpeg" alt="Memory 3">
+    </div>
+<br>
+<br>
+    <button onclick="nextPage('backLetter')">Back 💌</button>
+</div>
+
+<!-- 😾 PAGE 5 ANGRY -->
+<div id="page5" class="section">
+    <img src="kitten1.png" class="center-img">
+    <p class="message">😾 How dare you! Go back!</p>
+    <button onclick="nextPage('back')">Go Back</button>
+</div>
+
+</div>
+
+<script>
+
+function nextPage(action) {
+    document.querySelectorAll('.section').forEach(sec =>
+        sec.classList.remove('active')
+    );
+
+    if(action === 'yes')
+        document.getElementById('page2').classList.add('active');
+
+    else if(action === 'no')
+        document.getElementById('page5').classList.add('active');
+
+    else if(action === 'ofcourse')
+        document.getElementById('page3').classList.add('active');
+
+    else if(action === 'nope')
+        document.getElementById('page5').classList.add('active');
+
+    else if(action === 'memories')
+        document.getElementById('page4').classList.add('active');
+
+    else if(action === 'backLetter')
+        document.getElementById('page3').classList.add('active');
+
+    else if(action === 'back')
+        document.getElementById('page1').classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
